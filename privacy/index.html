@@ -4,11 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy · Paws and Tails</title>
-<meta name="description" content="Paws and Tails privacy policy.">
+<meta name="description" content="How Paws and Tails collects, uses and protects your data. Last updated 5 November 2026.">
+<link rel="canonical" href="https://pawsandtails.app/privacy/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
+<style>
+/* Privacy policy page: long-form layout on the Soft Pastel tokens */
+.policy .card { max-width: 820px; display: block; }
+.policy h1 { font-size: 28px; line-height: 34px; margin-bottom: var(--pt-spacing-xs); }
+.policy h2 { font-size: 20px; line-height: 26px; margin: var(--pt-spacing-2xl) 0 var(--pt-spacing-sm); }
+.policy h3 { font-size: 17px; line-height: 23px; margin: var(--pt-spacing-xl) 0 var(--pt-spacing-xs); }
+.policy p, .policy li { color: var(--pt-color-text-secondary); font-size: 16px; line-height: 24px; }
+.policy p { margin: 0 0 var(--pt-spacing-sm); }
+.policy strong { color: var(--pt-color-text-primary); }
+.policy ul { margin: 0 0 var(--pt-spacing-md); padding-left: 1.25em; }
+.policy li { margin-bottom: var(--pt-spacing-xxs); }
+.policy code { font-size: 14px; background: var(--pt-color-bg-subtle); padding: 1px 6px; border-radius: var(--pt-radius-xs); }
+.policy .policy-meta { display: inline-block; font-size: 14px; line-height: 20px; color: var(--pt-color-text-accent); background: var(--pt-color-bg-accent-subtle); padding: var(--pt-spacing-xxs) var(--pt-spacing-sm); border-radius: var(--pt-radius-sm); }
+.policy .table-scroll { overflow-x: auto; margin: 0 0 var(--pt-spacing-md); border: 1px solid var(--pt-color-border-default); border-radius: var(--pt-radius-sm); }
+.policy table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 20px; min-width: 560px; }
+.policy th, .policy td { text-align: left; vertical-align: top; padding: var(--pt-spacing-sm); border-bottom: 1px solid var(--pt-color-border-default); color: var(--pt-color-text-secondary); }
+.policy th { background: var(--pt-color-bg-subtle); color: var(--pt-color-text-primary); font-weight: 600; }
+.policy tr:last-child td { border-bottom: 0; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -17,14 +37,240 @@
     <a class="wordmark" href="/"><img class="lockup" src="/assets/lockup-transparent.png" srcset="/assets/lockup-transparent.png 1x, /assets/lockup-transparent@2x.png 2x" width="225" height="76" alt="Paws and Tails, home"></a>
   </div>
 </header>
-<main id="main" class="simple">
+<main id="main" class="simple policy">
   <div class="wrap">
-    <div class="card">
-      <!-- STUB: replace with the converted policy (Engineer: /workspace/build-briefs/legal/privacy-policy-draft.md) -->
-      <h1>Privacy policy</h1>
-      <p>Coming soon – drafted by Engineer. Our privacy policy is being drafted and will be published here before the apps launch in the stores.</p>
-      <p>Questions about your data in the meantime? Write to <a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a>.</p>
-    </div>
+    <article class="card">
+<h1>Paws and Tails Privacy Policy</h1>
+<p class="policy-meta">Version 0.1 (beta) · Effective date: 5 November 2026 · Last updated: 5 November 2026</p>
+
+<h2>At a glance</h2>
+<ul>
+<li>Paws and Tails keeps your pets' records: profiles, reminders, vaccinations, documents and a symptom log. You can share a read-only summary when you choose to.</li>
+<li>Our main database and file storage are in the European Union (Frankfurt, Germany).</li>
+<li>We don't sell your data or show ads. The app contains no analytics or advertising trackers.</li>
+<li>You can download all your data, or delete your account, at any time. When you delete your account it closes immediately, and you can restore it within 3 days (72 hours). After that your data is deleted for good, and it is removed from all our systems, including any backups, within 35 days.</li>
+</ul>
+<h2>1. Who we are</h2>
+<p>Paws and Tails is provided by <strong>Outbound Studios Maciej Klin</strong>, Warsaw, Poland. In this policy, "we" and "us" mean Outbound Studios Maciej Klin.</p>
+<p>We are the <strong>controller</strong> of the personal data described here. For privacy questions or GDPR requests, email <strong><a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></strong>.</p>
+<p>We have not appointed a Data Protection Officer, because we don't believe the law requires one for a service like ours.</p>
+<h2>2. What this policy covers</h2>
+<p>This policy covers the Paws and Tails Android app, the web app, the share pages we host for links you create, the account-deletion page, the emails we send you, and messages you send to our support address. During the beta, sign-up is by email and password only. An iPhone app is not available yet. Google Play and Apple's App Store have their own privacy policies.</p>
+<h2>3. What we collect and why</h2>
+<h3>Your account</h3>
+<p>When you sign up we collect your <strong>email address</strong> and a <strong>password</strong>. The password is stored by our sign-in provider only as a secure hash; we never see it in plain text. We also store your unit preference (metric or imperial) and an optional display name, and we record when your account was created.</p>
+<p>We use this to create your account, keep it secure, and send the emails the service needs: confirming your address (the link works for 24 hours), resetting your password (the link works for 1 hour), telling you when your data download is ready, and confirming that your account has been closed. We don't send marketing emails.</p>
+<p>To protect sign-up and password reset against abuse, we count requests per network address. We store the address only as a one-way hash, and we delete these counters after 2 days. Single-use email links are stored only as hashes and removed by a nightly clean-up job.</p>
+<p>During the beta you can only sign in with email and password. Sign in with Apple and Sign in with Google are not available. If we add them, we will update this policy before they go live.</p>
+<p>Legal basis: performing our contract with you (GDPR Art. 6(1)(b)). The abuse protection is based on our legitimate interest in keeping accounts secure (Art. 6(1)(f)).</p>
+<h3>Your pets' records</h3>
+<p>You decide what to add. This can include:</p>
+<ul>
+<li><strong>Pet profiles:</strong> name, species (cat or dog), sex, neutered status, birth date (or month or year), weight and an optional photo.</li>
+<li><strong>Reminders:</strong> title, type, note, schedule and repeat settings, your time zone, and when you marked a reminder done, skipped or snoozed.</li>
+<li><strong>Vaccinations:</strong> vaccine name, date given, next dose date, clinic, note, and an optional photo of the vaccine sticker.</li>
+<li><strong>Documents:</strong> files you upload (PDFs and images, up to 20 MB each and 500 MB per account), with type, title, date, clinic and note.</li>
+<li><strong>Symptom log:</strong> symptoms you select, free-text notes, the date and time, and an optional photo.</li>
+</ul>
+<p>We store and sync these records so the app works on your devices and so you can build summaries. Before upload, the app shrinks photos (pet, sticker and symptom photos) and removes hidden metadata such as location (GPS) data. Documents you upload are stored as you upload them, so any metadata inside them is kept.</p>
+<p>Information about your pet is not "health data" under the GDPR, which protects people's health. Because it is linked to you, we still protect it as personal data. Documents and photos can contain your name, address or phone number, other people's details, or sometimes information about your own health. Please upload only what you need. Paws and Tails doesn't diagnose anything and doesn't replace your vet.</p>
+<p>Legal basis: contract (Art. 6(1)(b)).</p>
+<h3>Reminders and notifications</h3>
+<p>Your phone schedules reminder notifications on the device. If you allow notifications, we also store a <strong>push token</strong> for your phone (or, in the web app, a <strong>web push subscription</strong>), together with a device identifier, the platform, your time zone and when the device was last seen. Our server uses this to send reminders even when the app is closed.</p>
+<p><strong>Notifications contain your pet's name and the reminder title.</strong> To deliver them, this text passes through Expo's push service and Google's Firebase Cloud Messaging (Android), Apple's push service (iPhone, if and when an iPhone app ships), or your browser's push service (web). See section 5.</p>
+<p>You can turn notifications off at any time in the app or in your device or browser settings.</p>
+<p>Legal basis: contract (Art. 6(1)(b)).</p>
+<h3>Sharing a summary</h3>
+<p>Sharing is always your choice. You can create a <strong>read-only link</strong> for one pet, choose which sections it shows (profile, vaccinations, reminders, symptoms, documents; up to 20 documents), and optionally add a contact name and contact detail for the person you share with to see. You can also create a PDF summary and send it yourself.</p>
+<ul>
+<li>Each link uses a long random code. We store that code so that you, the owner, can see and copy the link again. Only you can read it; other people see the summary only if you give them the link.</li>
+<li>Links expire after 7 days by default and never last more than 30 days. You can revoke a link at any time. Links stop working when you delete the pet or close your account, and they stay off if you restore the account.</li>
+<li>The person you share with doesn't need an account. Share pages are marked so search engines don't index them, aren't stored in browser caches, and don't load third-party scripts.</li>
+<li><strong>When someone opens your link, we record only the time it was opened.</strong> We don't record the visitor's IP address or device in this log. We use it to show you how many times the link was opened and when it was last opened. Each entry is deleted after 30 days. Our hosting providers keep their own short technical logs (see section 5).</li>
+<li>Once you've sent a PDF, or someone has downloaded a document from your link, we can't take it back.</li>
+</ul>
+<p>Legal basis: contract with you (Art. 6(1)(b)). For the people who open a link, our legitimate interest in running the share feature and keeping it secure (Art. 6(1)(f)).</p>
+<h3>Download my data</h3>
+<p>You can download a copy of everything in your account from <strong>Settings → Account → Download my data</strong>. You confirm with your password. We prepare a ZIP file with your records in machine-readable form (<code>data.json</code> and CSV files), a PDF summary for each pet and a README, and your device adds your original photos and documents when it downloads the file. The download doesn't contain link codes, IP addresses or browser details.</p>
+<p>The prepared file is kept for <strong>7 days</strong> and then deleted automatically. You can request a new one once every 24 hours. We'll email you when it's ready. If you close your account, any prepared download is deleted straight away.</p>
+<p>Legal basis: legal obligation (your rights of access and portability, Art. 6(1)(c)) and contract.</p>
+<h3>Support</h3>
+<p>If you email <a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a>, we use your email address, your message and anything you attach to answer you. Messages to this address are forwarded to the mailbox we use for support. We keep support emails only for as long as we need them to handle your request.</p>
+<p>Legal basis: contract or legitimate interests (Art. 6(1)(b)/(f)).</p>
+<h3>Technical data</h3>
+<p>When you use the service, our providers' servers process your IP address and technical request data in order to deliver the service and keep it secure. We don't use this data to profile you. Our providers keep these logs for short periods.</p>
+<p>Legal basis: legitimate interests in running a secure service (Art. 6(1)(f)).</p>
+<h3>What we don't collect</h3>
+<p>We don't use analytics tools, advertising IDs or crash-reporting tools, and we don't track you across other companies' apps or websites. We don't collect your precise location, contacts or payment details (the app is free). If any of this changes, we will update this policy first and ask for your consent where the law requires it.</p>
+<h2>4. Data on your device, and cookies</h2>
+<p><strong>Apps.</strong> The app keeps an offline copy of your records in a local database on your device, so it works without a connection. Your sign-in session is stored encrypted, with the key held in the device's secure storage. Signing out closes the local copy but keeps any changes that haven't synced yet, so they aren't lost. You can remove the local copy with "Wipe local data".</p>
+<p><strong>Web app.</strong> The web app uses only storage it needs in order to work:</p>
+<ul>
+<li>an <strong>HttpOnly sign-in cookie</strong> that holds your refresh token. Scripts can't read it, it is sent only to our sign-in endpoints, and it lasts up to 14 days;</li>
+<li>a <strong>security (CSRF) cookie</strong> that protects those sign-in requests;</li>
+<li>a few <strong>local storage entries</strong> that keep your browser tabs signed in to the same session (a session ID, which isn't a password or token, and a note used to finish a sign-out);</li>
+<li>an <strong>offline copy of your records</strong> in your browser's storage (IndexedDB, or the private origin file system where the browser supports it);</li>
+<li>a <strong>service worker</strong> that handles notifications and app updates. It doesn't cache your records.</li>
+</ul>
+<p>These are strictly necessary for the service, so we don't ask for cookie consent and don't show a cookie banner. There are no analytics or advertising cookies. Share pages and the account-deletion page don't load third-party scripts. This website (pawsandtails.app) sets no cookies.</p>
+<h2>5. Who we share data with</h2>
+<p>We don't sell your personal data or share it for advertising. We use the service providers below, which process data only on our instructions.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>What they do for us</th>
+<th>Data involved</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supabase</strong> (Supabase Inc.)</td>
+<td>Database, sign-in, file storage, server functions and scheduled jobs</td>
+<td>All account and pet data, files, push tokens</td>
+<td>EU: Frankfurt, Germany (eu-central-1). Supabase is a US company</td>
+</tr>
+<tr>
+<td><strong>PowerSync</strong> (JourneyApps), PowerSync Cloud</td>
+<td>Offline sync between your devices and our database</td>
+<td>The pet records that sync (not files)</td>
+<td>Hosted service run by PowerSync</td>
+</tr>
+<tr>
+<td><strong>Resend</strong> (Resend, Inc.)</td>
+<td>Sending our service emails from pawsandtails.app</td>
+<td>Your email address and the email content</td>
+<td>EU sending region: Ireland (eu-west-1). Resend is a US company</td>
+</tr>
+<tr>
+<td><strong>Expo</strong> (650 Industries, Inc.)</td>
+<td>Web hosting for the web app, share pages and deletion page (EAS Hosting), and push notification relay (Expo Push Service)</td>
+<td>Web visitors' IP addresses and request data; share-page content as it is delivered; push tokens and notification text (pet name and reminder title)</td>
+<td>USA / global</td>
+</tr>
+<tr>
+<td><strong>Google</strong> (Firebase Cloud Messaging)</td>
+<td>Delivering push notifications to Android phones</td>
+<td>Push token and notification text</td>
+<td>USA / global</td>
+</tr>
+<tr>
+<td><strong>Apple</strong> (Apple Push Notification service)</td>
+<td>Delivering push notifications to iPhones, if and when an iPhone app ships</td>
+<td>Push token and notification text</td>
+<td>USA / global</td>
+</tr>
+<tr>
+<td><strong>Your browser's push service</strong> (for example Google, Mozilla or Apple)</td>
+<td>Delivering web push notifications</td>
+<td>Push subscription and notification text (encrypted in transit)</td>
+<td>Depends on your browser</td>
+</tr>
+<tr>
+<td><strong>Squarespace</strong></td>
+<td>Our domain and forwarding of hi@pawsandtails.app</td>
+<td>Messages you send to that address</td>
+<td>USA / global</td>
+</tr>
+<tr>
+<td><strong>Google</strong> (Gmail)</td>
+<td>The mailbox where support emails are read</td>
+<td>Messages you send us</td>
+<td>USA / global</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong> (GitHub, Inc.)</td>
+<td>Hosting this website, pawsandtails.app</td>
+<td>Visitors' IP addresses and request data</td>
+<td>USA / global</td>
+</tr>
+</tbody>
+</table></div>
+<p>We may also disclose data where the law requires it, or to protect the rights and safety of our users and of us.</p>
+<h2>6. Where your data is stored and international transfers</h2>
+<p>We store your account and pet data in the EU (Frankfurt, Germany), wherever you live. Some of our providers are US companies or operate worldwide, in particular Expo, Google and Apple for notifications, and Expo for web hosting. When personal data is transferred outside the EU/EEA, we rely on the EU–US Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses. Contact us if you'd like a copy of the safeguards.</p>
+<h2>7. How long we keep data</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account and pet records</td>
+<td>While your account is open. Deleting a pet removes its photos, sticker photos, documents and symptom photos from storage and stops its share links</td>
+</tr>
+<tr>
+<td>Account you have deleted</td>
+<td>Closed straight away. Permanently deleted <strong>72 hours (3 days)</strong> after closing, unless you restore it first. Removed from all our systems, including any backups, within <strong>35 days</strong></td>
+</tr>
+<tr>
+<td>Share link open log</td>
+<td>30 days per entry</td>
+</tr>
+<tr>
+<td>Share links themselves</td>
+<td>Expire within 30 days at most. The link record is kept with your account so you can see your past links, until you delete the pet or your account</td>
+</tr>
+<tr>
+<td>Prepared data download</td>
+<td>7 days, or until you close your account if that is sooner</td>
+</tr>
+<tr>
+<td>Email sign-up and reset links</td>
+<td>24 hours (sign-up) and 1 hour (reset); stored only as hashes and cleaned up nightly</td>
+</tr>
+<tr>
+<td>Sign-up and reset abuse counters (hashed IP)</td>
+<td>2 days</td>
+</tr>
+<tr>
+<td>Push tokens and web push subscriptions</td>
+<td>Until you sign out or turn notifications off, the token stops working, or your account is deleted</td>
+</tr>
+<tr>
+<td>Support emails</td>
+<td>As long as we need them to handle your request</td>
+</tr>
+<tr>
+<td>Record that an account was deleted</td>
+<td>A minimal record, kept only as long as we may need to show that we handled the deletion</td>
+</tr>
+</tbody>
+</table></div>
+<h2>8. Deleting your account</h2>
+<p>In the app, go to <strong>Settings → Account → Delete account and all data</strong>, type DELETE and enter your password. Without the app, use our web page <strong><a href="https://pawsandtails.app/delete-account/">pawsandtails.app/delete-account</a></strong>, which explains the steps. Only the account owner can delete an account.</p>
+<ul>
+<li><strong>Your account is closed straight away.</strong> You're signed out, reminders and notifications stop, your shared links stop working, and any prepared data download is deleted. We email you a confirmation with the date and time your data will be deleted.</li>
+<li><strong>You can restore it within 3 days (72 hours)</strong> by signing back in and choosing Restore. Share links stay off after a restore; you can create new ones.</li>
+<li><strong>72 hours after closing,</strong> we permanently delete your account, your sign-in and everything in it: pets, reminders, vaccinations and sticker photos, documents, symptom logs and photos, share links and their open logs. Everything is removed from all our systems, including any backups, within 35 days of closing.</li>
+<li>We keep only a minimal record that the account was deleted, plus short-lived technical logs held by our hosting providers.</li>
+</ul>
+<p>If you'd like a copy of your data, download it first (section 3, "Download my data").</p>
+<h2>9. Your rights</h2>
+<p>Under the GDPR you have the right to:</p>
+<ul>
+<li><strong>access</strong> your data and get a copy (the in-app "Download my data" does this for you);</li>
+<li><strong>correct</strong> inaccurate data (you can edit most of it in the app);</li>
+<li><strong>delete</strong> your data (section 8);</li>
+<li><strong>restrict</strong> or <strong>object to</strong> our use of your data, including where we rely on legitimate interests;</li>
+<li><strong>receive your data in a portable format</strong> (the download includes JSON and CSV files).</li>
+</ul>
+<p>To use any of these rights, email <strong><a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></strong>. We'll answer within one month. For complex requests this can be extended by two more months, and we'll tell you if so. We may need to confirm that the request comes from you.</p>
+<p>You can also complain to the Polish supervisory authority: <strong>Prezes Urzędu Ochrony Danych Osobowych (PUODO)</strong>, ul. Stanisława Moniuszki 1A, 00-014 Warszawa, Poland; tel. +48 22 531 03 00; <a href="mailto:kancelaria@uodo.gov.pl">kancelaria@uodo.gov.pl</a>; <a href="https://uodo.gov.pl">uodo.gov.pl</a>. You can also complain to the supervisory authority in the EU country where you live or work.</p>
+<h2>10. Children</h2>
+<p>Paws and Tails is not meant for children. You must be <strong>at least 16</strong> to create an account, and we don't knowingly collect data from anyone under 16. If you think a child has created an account, contact us and we'll delete it.</p>
+<h2>11. Security</h2>
+<p>Data is encrypted in transit (HTTPS). Database rules make sure each account can see only its own records. Share links use long random codes, expire, can be revoked, and are hidden from search engines. Server keys never ship inside the app. No system is perfectly secure. If a breach puts your rights at risk, we'll notify the supervisory authority within 72 hours and tell you where the law requires it.</p>
+<h2>12. Changes to this policy</h2>
+<p>We'll update this policy when the way we handle data changes, for example if we add Apple or Google sign-in or a new provider. For important changes, we'll tell you in the app or by email before they take effect. The date at the top shows when the policy last changed.</p>
+<p>This policy is written in English.</p>
+<h2>13. Contact</h2>
+<p><strong>Outbound Studios Maciej Klin</strong>, Warsaw, Poland · <a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></p>
+    </article>
   </div>
 </main>
 <footer class="site-footer">
@@ -45,7 +291,6 @@
     </nav>
   </div>
   <div class="wrap legal">
-    <!-- TODO: business address + NIP pending virtual-office decision; never publish home address -->
     <p><span class="legal-label">Service provider:</span> Outbound Studios, Warsaw, Poland · <a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></p>
     <p>© 2026 Outbound Studios. No cookies, no trackers.</p>
   </div>
