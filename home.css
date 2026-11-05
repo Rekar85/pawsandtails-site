@@ -120,7 +120,7 @@ h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3)
 .toast { position: absolute; z-index: 3; right: -4%; bottom: 22%; display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow-float); }
 .toast strong { display: block; font-weight: 700; font-size: .98rem; }
 .toast small { display: block; color: var(--text-2); font-size: .84rem; }
-.hero-pup { position: absolute; z-index: 5; left: -4%; bottom: -4%; width: clamp(150px, 18vw, 250px); filter: drop-shadow(0 18px 24px rgba(40,30,80,.18)); }
+.hero-pup { position: absolute; z-index: 5; left: -4%; bottom: -4%; width: clamp(180px, 21.6vw, 300px); filter: drop-shadow(0 18px 24px rgba(40,30,80,.18)); }
 
 /* 2. Statement */
 .statement { padding: clamp(80px, 12vw, 180px) 0; text-align: center; }
@@ -218,7 +218,7 @@ h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3)
   .hero .share-card .share-card-paw { width: 36px; height: 36px; margin-bottom: 6px; }
   .toast { right: -2%; padding: 10px 14px 10px 10px; }
   .toast .bubble { width: 40px; height: 40px; }
-  .hero-pup { width: 140px; left: -3%; }
+  .hero-pup { width: 168px; left: -3%; }
   .btn-large { width: 100%; }
   .store-row { flex-direction: column; align-items: stretch; }
   .store-row .btn { justify-content: space-between; padding-inline: 20px; }
