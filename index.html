@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paws and Tails: pet care reminders and records</title>
-<meta name="description" content="Recurring care reminders, vaccine dates, vet documents and a quick symptom log for every pet, with a read-only summary to share with any vet or sitter. Free during the beta.">
+<meta name="description" content="Recurring care reminders, vaccine dates, vet documents and a quick symptom log for every cat and dog, with a read-only summary to share with any vet or sitter. Free, with no ads or trackers.">
 <link rel="canonical" href="https://pawsandtails.app/">
 <meta name="theme-color" content="#F7F5FD">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Paws and Tails">
 <meta property="og:title" content="Paws and Tails: pet care reminders and records">
-<meta property="og:description" content="Never miss a dose or a deadline, and keep your pet's records ready for any vet. On iPhone, Android and the web. Free during the beta.">
+<meta property="og:description" content="Never miss a dose or a deadline, and keep your pet's records ready for any vet. Free during the beta.">
 <meta property="og:url" content="https://pawsandtails.app/">
 <meta property="og:image" content="https://pawsandtails.app/og.png">
 <meta property="og:image:type" content="image/png">
@@ -23,112 +23,260 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="preload" href="/fonts/quicksand-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
+<link rel="preload" href="/fonts/quicksand-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/home.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- Shared icon sprite (decorative; every use is aria-hidden) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="M18 3l3 3M19.5 4.5 16 8"/><path d="M11 6l7 7"/><path d="M17 12l-7.5 7.5H5.5V15.5L13 8"/><path d="M5.5 19.5 3 22"/><path d="M9 12.5l1.5 1.5M11.5 10l1.5 1.5"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="17.5" cy="6" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.7 10.8l6.6-3.6M8.7 13.2l6.6 3.6"/></symbol>
+  <symbol id="i-pets" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.8 14.2c2.4-.3 4.3 1.2 4.7 4.3"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.6L4 8"/><path d="M4 3.5V8h4.5"/><path d="M4 13a8 8 0 0 0 14.3 4.6L20 16"/><path d="M20 20.5V16h-4.5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19.5h15"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.5c0 4.3-2.9 7.6-7 9-4.1-1.4-7-4.7-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3.5H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-10z"/><path d="M14 3.5v5h5"/><path d="M9 13h6M9 16.5h4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h2l1.5-2h5l1.5 2h2a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+</svg>
+
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="/"><img class="lockup" src="/assets/lockup-transparent.png" srcset="/assets/lockup-transparent.png 1x, /assets/lockup-transparent@2x.png 2x" width="225" height="76" alt="Paws and Tails, home"></a>
-    <a class="btn btn-small btn-primary" href="https://paws-and-tails.expo.app">Open web app</a>
+    <a class="btn btn-primary btn-small" href="https://paws-and-tails.expo.app">Open the web app</a>
   </div>
 </header>
 
 <main id="main">
+
+  <!-- 1. HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="chip chip-mint">Now in beta · free</p>
-        <h1 id="hero-title">Never miss a dose or a deadline.</h1>
-        <p class="lead">Paws and Tails keeps your pet's care in one place: recurring reminders, vaccine dates, vet documents and a quick symptom log, ready to share with any vet, sitter or co-owner.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://paws-and-tails.expo.app">Open web app</a>
+        <p class="eyebrow rise" style="--d:0"><span class="dot dot-mint" aria-hidden="true"></span>Now in beta · free</p>
+        <h1 id="hero-title" class="display rise" style="--d:1">Never miss a dose or a deadline.</h1>
+        <p class="lead rise" style="--d:2">Reminders, vaccines, vet documents and a quick symptom log for every cat and dog. Ready to share with any vet, sitter or co-owner.</p>
+        <div class="cta-row rise" style="--d:3">
+          <a class="btn btn-primary btn-large" href="https://paws-and-tails.expo.app">Open the web app<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="cta-row store-row">
+        <div class="store-row rise" style="--d:4">
           <!-- STORE BUTTONS: neutral text buttons, not official badges. Swap in official Apple/Google badge artwork once the listings exist.
-               To hide a store button entirely, add the class "is-hidden". iOS is undecided: App Store button may be hidden with is-hidden. -->
+               To hide a store button entirely, add the class "is-hidden". -->
           <span class="btn btn-soon store-ios" aria-disabled="true">App Store <small>Coming soon</small></span>
           <span class="btn btn-soon store-android" aria-disabled="true">Google Play <small>Coming soon</small></span>
         </div>
-        <p class="hint">Works on iPhone, Android and on the web. One account, the same records everywhere.</p>
+        <p class="hint rise" style="--d:5">Free. No ads, no trackers.</p>
       </div>
-      <div class="hero-visual">
-        <figure class="browser-frame">
-          <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-          <img src="/assets/home-web.webp" width="1200" height="750" loading="eager" decoding="async" alt="Paws and Tails web app home screen for a dog called Winston: an overdue DHPP booster and deworming under Needs Attention, a flea and tick treatment and a symptom note under Today, and a rabies dose due soon under Upcoming.">
-        </figure>
-        <figure class="phone-frame">
-          <img src="/assets/home-mobile.webp" width="390" height="844" decoding="async" alt="Paws and Tails mobile home screen showing the same overdue, today and upcoming care for Winston.">
-        </figure>
-      </div>
-    </div>
-  </section>
 
-  <section class="features" aria-labelledby="features-title">
-    <div class="wrap">
-      <h2 id="features-title" class="section-title">Everything your pet's care needs, in one app</h2>
-      <p class="section-lead">Built for real pet life: more than one pet, more than one clinic, a sitter while you're away. It's the record you own, so it works with whichever vet you see.</p>
-      <ul class="feature-grid">
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.8 14.2c2.4-.3 4.3 1.2 4.7 4.3"/></svg></span>
-          <h3>Every pet, one app</h3>
-          <p>Add all your dogs and cats, each with their own profile, reminders and records. Switch between them in a tap.</p>
-        </li>
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></span>
-          <h3>Recurring care reminders</h3>
-          <p>Set flea and tick, deworming, meds and boosters once. Get a push notification on the day, and a day, three days or a week before if you like. Mark it done and the next one is scheduled.</p>
-        </li>
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 3l3 3M19.5 4.5 16 8"/><path d="M11 6l7 7"/><path d="M17 12l-7.5 7.5H5.5V15.5L13 8"/><path d="M5.5 19.5 3 22"/><path d="M9 12.5l1.5 1.5M11.5 10l1.5 1.5"/></svg></span>
-          <h3>Vaccination log</h3>
-          <p>Record the date given and the next dose, with a photo of the vaccine sticker. See what's coming up, which helps when you're planning a trip.</p>
-        </li>
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
-          <h3>Documents in one place</h3>
-          <p>Keep lab results, prescriptions and visit reports from your camera, photos or files, and find them again in seconds.</p>
-        </li>
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
-          <h3>Quick symptom log</h3>
-          <p>Note what you noticed in a couple of taps, with the time added for you. Show your vet a clear timeline. It records, it doesn't diagnose.</p>
-        </li>
-        <li class="card">
-          <span class="icon-bubble" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="17.5" cy="6" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.7 10.8l6.6-3.6M8.7 13.2l6.6 3.6"/></svg></span>
-          <h3>Share a read-only summary</h3>
-          <p>Send vets, sitters and co-owners a one-page summary as a PDF or a link you can turn off any time. They can view it, not edit it, and don't need an account.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="everywhere" aria-labelledby="everywhere-title">
-    <div class="wrap everywhere-inner">
-      <div>
-        <h2 id="everywhere-title" class="section-title">Works everywhere you are</h2>
-        <p>Use it on your iPhone, your Android phone or on the web. Your pets and records stay in sync across all of them.</p>
-      </div>
-      <ul class="platforms" aria-label="Platforms">
-        <li class="chip chip-lavender">iPhone <span class="soon">· coming soon</span></li>
-        <li class="chip chip-lavender">Android <span class="soon">· coming soon</span></li>
-        <li class="chip chip-mint">On the web <span class="soon">· available now</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="beta" aria-labelledby="beta-title">
-    <div class="wrap">
-      <div class="beta-card card">
-        <h2 id="beta-title" class="section-title">Paws and Tails is in beta</h2>
-        <p>It's free while we're in beta. Things may change as we learn from early users, and we'd love to hear what works for you and what doesn't.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://paws-and-tails.expo.app">Open web app</a>
-          <a class="btn btn-secondary" href="mailto:hi@pawsandtails.app">Send feedback</a>
+      <div class="hero-visual" aria-hidden="false">
+        <div class="hero-blob" aria-hidden="true"></div>
+        <div class="share-card float-a" aria-hidden="true">
+          <span class="share-card-paw"><img src="/assets/paw.svg" width="28" height="28" alt=""></span>
+          <span class="share-card-title">Winston</span>
+          <span class="share-card-sub">Read-only summary</span>
+          <span class="share-card-chip"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Link on · expires in 7 days</span>
         </div>
+        <figure class="phone">
+          <img src="/assets/home-mobile.webp" width="390" height="844" fetchpriority="high" alt="Paws and Tails home screen for a dog called Winston: an overdue DHPP booster and deworming under Needs Attention, a flea and tick treatment and a symptom note under Today.">
+        </figure>
+        <div class="toast float-b" aria-hidden="true">
+          <span class="bubble bubble-pink"><svg class="ico"><use href="#i-bell"/></svg></span>
+          <span><strong>Flea/tick treatment</strong><small>Today, 19:00 · Winston</small></span>
+        </div>
+        <img class="hero-pup float-c" src="/assets/v2/puppy-480.webp" srcset="/assets/v2/puppy-480.webp 480w, /assets/v2/puppy-800.webp 800w" sizes="(min-width: 900px) 260px, 160px" width="480" height="480" alt="" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. STATEMENT -->
+  <section class="statement" aria-labelledby="statement-title">
+    <div class="wrap">
+      <div class="orbs" aria-hidden="true">
+        <span class="orb orb-pink"><svg class="ico"><use href="#i-bell"/></svg></span>
+        <span class="orb orb-mint"><svg class="ico"><use href="#i-syringe"/></svg></span>
+        <span class="orb orb-lav"><svg class="ico"><use href="#i-folder"/></svg></span>
+      </div>
+      <h2 id="statement-title" class="visually-hidden">Why Paws and Tails</h2>
+      <p class="statement-text"><span class="w">Built</span> <span class="w">for</span> <span class="w">real</span> <span class="w">pet</span> <span class="w">life:</span> <span class="w">more</span> <span class="w">than</span> <span class="w">one</span> <span class="w">pet,</span> <span class="w">more</span> <span class="w">than</span> <span class="w">one</span> <span class="w">clinic,</span> <span class="w">a</span> <span class="w">sitter</span> <span class="w">while</span> <span class="w">you're</span> <span class="w">away.</span> <span class="w accent">It's</span> <span class="w accent">the</span> <span class="w accent">record</span> <span class="w accent">you</span> <span class="w accent">own.</span></p>
+    </div>
+  </section>
+
+  <!-- 3. KINETIC BAND (decorative) -->
+  <div class="band" aria-hidden="true">
+    <p class="band-row band-l">Remind <i class="bd bd-pink"></i> Record <i class="bd bd-mint"></i> Share <i class="bd bd-lav"></i> Remind <i class="bd bd-pink"></i> Record <i class="bd bd-mint"></i></p>
+    <p class="band-row band-r">Cats <i class="bd bd-amber"></i> Dogs <i class="bd bd-pink"></i> Every pet <i class="bd bd-mint"></i> Cats <i class="bd bd-amber"></i> Dogs <i class="bd bd-pink"></i></p>
+  </div>
+
+  <!-- 4. CHAPTERS -->
+  <section class="chapter ch-lav" aria-labelledby="ch1-title">
+    <div class="wrap chapter-inner">
+      <div class="chapter-copy">
+        <p class="eyebrow">01 · Remember</p>
+        <h2 id="ch1-title" class="h2">Set it once.<br> We'll remember.</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="bubble bubble-lav"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg></span>
+            <div><h3>Recurring care reminders</h3><p>Flea and tick, deworming, meds and boosters. Get a push notification on the day, and a day, three days or a week before if you like. Mark it done and the next one is scheduled.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-lav"><svg class="ico" aria-hidden="true"><use href="#i-pets"/></svg></span>
+            <div><h3>Every pet, one app</h3><p>Add all your dogs and cats, each with their own profile, reminders and records. Switch between them in a tap.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="chapter-visual">
+        <img class="ch-art reveal" src="/assets/v2/cat-480.webp" srcset="/assets/v2/cat-480.webp 480w, /assets/v2/cat-800.webp 800w" sizes="(min-width: 900px) 420px, 70vw" width="480" height="480" alt="" loading="lazy" decoding="async">
+        <div class="ui-stack" aria-hidden="true">
+          <div class="ui-card ui-overdue reveal">
+            <span class="bubble bubble-pink"><svg class="ico"><use href="#i-bell"/></svg></span>
+            <span class="ui-body"><strong>Deworming</strong><small>Was due 18 Oct · every 2 months</small><em class="chip chip-overdue">Overdue</em></span>
+            <span class="ui-tick"><svg class="ico"><use href="#i-check"/></svg></span>
+          </div>
+          <div class="ui-card reveal">
+            <span class="bubble bubble-lav"><svg class="ico"><use href="#i-bell"/></svg></span>
+            <span class="ui-body"><strong>Flea/tick treatment</strong><small>Today, 19:00 · monthly</small></span>
+            <span class="ui-tick"><svg class="ico"><use href="#i-check"/></svg></span>
+          </div>
+          <div class="ui-card ui-soon reveal">
+            <span class="bubble bubble-amber"><svg class="ico"><use href="#i-syringe"/></svg></span>
+            <span class="ui-body"><strong>Rabies</strong><small>Next dose in 12 days</small><em class="chip chip-soon">Due soon</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter ch-mint" aria-labelledby="ch2-title">
+    <div class="wrap chapter-inner">
+      <div class="chapter-copy">
+        <p class="eyebrow">02 · Record</p>
+        <h2 id="ch2-title" class="h2">Every vaccine, file and symptom. Found in seconds.</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="bubble bubble-mint"><svg class="ico" aria-hidden="true"><use href="#i-syringe"/></svg></span>
+            <div><h3>Vaccination log</h3><p>Record the date given and the next dose, with a photo of the vaccine sticker. See what's coming up, which helps when you're planning a trip.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-mint"><svg class="ico" aria-hidden="true"><use href="#i-folder"/></svg></span>
+            <div><h3>Documents in one place</h3><p>Keep lab results, prescriptions and visit reports as PDFs or images, from your camera, photos or files.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-mint"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span>
+            <div><h3>Quick symptom log</h3><p>Note what you noticed in a couple of taps, with the time added for you and an optional photo. Show your vet a clear timeline. It records, it doesn't diagnose.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="chapter-visual">
+        <img class="ch-art reveal" src="/assets/v2/records-480.webp" srcset="/assets/v2/records-480.webp 480w, /assets/v2/records-800.webp 800w" sizes="(min-width: 900px) 420px, 70vw" width="480" height="480" alt="" loading="lazy" decoding="async">
+        <div class="ui-stack" aria-hidden="true">
+          <div class="ui-card reveal">
+            <span class="bubble bubble-mint"><svg class="ico"><use href="#i-syringe"/></svg></span>
+            <span class="ui-body"><strong>Rabies</strong><small>Given 17 Nov 2025 · next 17 Nov 2026</small><em class="chip chip-valid"><svg class="ico"><use href="#i-camera"/></svg>Sticker photo</em></span>
+          </div>
+          <div class="ui-card reveal">
+            <span class="bubble bubble-lav"><svg class="ico"><use href="#i-pdf"/></svg></span>
+            <span class="ui-body"><strong>Blood panel results</strong><small>Lab result · PDF</small></span>
+          </div>
+          <div class="ui-card reveal">
+            <span class="bubble bubble-pink"><svg class="ico"><use href="#i-pulse"/></svg></span>
+            <span class="ui-body"><strong>Vomiting</strong><small>Today, 08:12 (auto) · photo added</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter ch-pink" aria-labelledby="ch3-title">
+    <div class="wrap chapter-inner">
+      <div class="chapter-copy">
+        <p class="eyebrow">03 · Share</p>
+        <h2 id="ch3-title" class="h2">Hand over a summary, not a shoebox.</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="bubble bubble-pink"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg></span>
+            <div><h3>A read-only link you control</h3><p>Send vets, sitters and co-owners a link to one pet's summary. Choose what it shows, turn it off any time, and it expires on its own. They can view it, not edit it, and don't need an account.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-pink"><svg class="ico" aria-hidden="true"><use href="#i-pdf"/></svg></span>
+            <div><h3>A one-page PDF</h3><p>Prefer a file? Make a PDF summary and send it yourself, or print it for the waiting room.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="chapter-visual">
+        <div class="share-card share-card-lg reveal" aria-hidden="true">
+          <span class="share-card-paw"><img src="/assets/paw.svg" width="28" height="28" alt=""></span>
+          <span class="share-card-title">Winston</span>
+          <span class="share-card-sub">Read-only summary · for the sitter</span>
+          <span class="share-sections"><i>Profile</i><i>Vaccinations</i><i>Reminders</i><i>Documents</i></span>
+          <span class="share-card-chip"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Link on · expires in 7 days</span>
+        </div>
+        <div class="ui-card ui-float reveal" aria-hidden="true">
+          <span class="bubble bubble-lav"><svg class="ico"><use href="#i-pdf"/></svg></span>
+          <span class="ui-body"><strong>Winston-summary.pdf</strong><small>One page · ready to send</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter ch-amber" aria-labelledby="ch4-title">
+    <div class="wrap chapter-inner">
+      <div class="chapter-copy">
+        <p class="eyebrow">04 · Yours</p>
+        <h2 id="ch4-title" class="h2">Works offline. Syncs everywhere. Stays yours.</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="bubble bubble-amber"><svg class="ico" aria-hidden="true"><use href="#i-sync"/></svg></span>
+            <div><h3>Offline first, in sync</h3><p>Add a reminder in a basement clinic with no signal. Your pets and records sync across your devices when you're back online.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-amber"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg></span>
+            <div><h3>Take it with you, or leave</h3><p>Download all your data whenever you want. Delete your account at any time.</p></div>
+          </li>
+          <li>
+            <span class="bubble bubble-amber"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <div><h3>No ads, no trackers</h3><p>We don't sell your data or show ads, and there's no analytics or advertising tracking in the app.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="chapter-visual">
+        <img class="ch-art ch-art-xl reveal" src="/assets/v2/friends-480.webp" srcset="/assets/v2/friends-480.webp 480w, /assets/v2/friends-800.webp 800w" sizes="(min-width: 900px) 520px, 80vw" width="480" height="480" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PLATFORMS -->
+  <section class="platforms" aria-labelledby="platforms-title">
+    <div class="wrap">
+      <h2 id="platforms-title" class="h2 center">One account. Every screen.</h2>
+      <p class="section-lead center">Your pets and records stay in sync across all of them.</p>
+      <ul class="platform-grid">
+        <li class="platform reveal"><span class="pf-name">Web</span><span class="chip chip-valid">Available now</span></li>
+        <li class="platform reveal"><span class="pf-name">Android</span><span class="chip chip-lav">Coming soon</span></li>
+        <li class="platform reveal"><span class="pf-name">iPhone</span><span class="chip chip-lav">Coming soon</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. FINAL CTA -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap final-inner">
+      <h2 id="final-title" class="display display-md">Start with one pet. It takes a minute.</h2>
+      <p class="lead">Paws and Tails is free while we're in beta. Things may change as we learn from early users, and we'd love to hear what works for you.</p>
+      <div class="cta-row center-row">
+        <a class="btn btn-primary btn-large" href="https://paws-and-tails.expo.app">Open the web app<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-secondary btn-large" href="mailto:hi@pawsandtails.app">Send feedback</a>
+      </div>
+      <div class="store-row center-row">
+        <span class="btn btn-soon store-ios" aria-disabled="true">App Store <small>Coming soon</small></span>
+        <span class="btn btn-soon store-android" aria-disabled="true">Google Play <small>Coming soon</small></span>
       </div>
     </div>
   </section>
@@ -145,17 +293,19 @@
     </div>
     <nav aria-label="Footer">
       <ul class="footer-links">
+        <li><a href="https://paws-and-tails.expo.app">Open the web app</a></li>
         <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/delete-account/">Delete account</a></li>
+        <li><a href="https://paws-and-tails.expo.app/delete-account">Delete account</a></li>
         <li><a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></li>
       </ul>
     </nav>
   </div>
   <div class="wrap legal" id="imprint">
-    <!-- TODO: business address + NIP pending virtual-office decision; never publish home address -->
+    <!-- Never publish a home address or NIP here. -->
     <p><span class="legal-label">Service provider:</span> Outbound Studios, Warsaw, Poland · <a href="mailto:hi@pawsandtails.app">hi@pawsandtails.app</a></p>
     <p>© 2026 Outbound Studios. No cookies, no trackers.</p>
   </div>
+  <p class="giant-mark" aria-hidden="true">Paws and Tails</p>
 </footer>
 </body>
 </html>
